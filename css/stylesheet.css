@@ -1,0 +1,32 @@
+/* This defines styles and classes used in the book */
+body { margin: 5%; text-align: justify; font-size: medium; }
+code { font-family: monospace; }
+h1 { text-align: left; }
+h2 { text-align: left; }
+h3 { text-align: left; }
+h4 { text-align: left; }
+h5 { text-align: left; }
+h6 { text-align: left; }
+h1.title { }
+h2.author { }
+h3.date { }
+ol.toc { padding: 0; margin-left: 1em; }
+ol.toc li { list-style-type: none; margin: 0; padding: 0; }
+sup img {
+        line-height: 1.2;
+        width: 1em;
+    height: 1em;
+    margin: 0;
+    padding: 0em;
+        vertical-align: text-top;
+}
+
+li.duokan-footnote-item {
+        font-family:"ht","微软雅黑","黑体","zw",sans-serif;
+        text-align: left;
+        font-size: small;
+        line-height: 1.2;
+        padding: 0px;
+}
+/** Duokan Extent End **/
+
