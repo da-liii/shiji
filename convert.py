@@ -13,11 +13,12 @@ def clean(content):
     content = content.replace("　　【", "##")
     content = content.replace("】", "")
     content = content.replace("　　〔注释〕\n\n", "")
+    content = content.replace("##说明", "")
     return content
         
 def convert(no, save):
     cnt = 0
-    filename = str(no) + ".txt"
+    filename = "source/" + str(no) + ".txt"
     data = open(filename, "r")
 
     content = getLine(data)
@@ -75,7 +76,8 @@ def convert(no, save):
 
 if __name__ == "__main__":
     save = open("test.md", "w")
-    for i in range(1, 13):
+    save.write("% 史记注译\n")
+    save.write("% 司马迁\n\n")
+    for i in range(1, 123):
         convert(i, save)
-    save.close()
-    
+    save.close()    
