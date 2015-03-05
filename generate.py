@@ -79,7 +79,7 @@ def convert(no, save):
     return cnt
 
 
-def replaceit(no):
+def replaceit(no, isMOBI):
     filename = "/tmp/build/" + "ch" + "0"*(3-len(str(no)))+ str(no) + ".xhtml"
     
     fin = open(filename,"r")
@@ -94,27 +94,47 @@ def replaceit(no):
         result = re.compile(pattern).search(content)
         if result == None:
             break
-        text = "<sup><a href=\"#fn" + str(i) + "\" class=\"duokan-footnote\" id=\"fnref" + str(i) + "\"><img src=\"note.png\"/></a></sup>"
+        if isMOBI:
+            text = "<a id=\"fnref" + str(i) + "\" href=\"#fn" + str(i) + "\"><span><sup>[" + str(i) + "]</sup></span></a>"
+        else:
+            text = "<sup><a href=\"#fn" + str(i) + "\" class=\"duokan-footnote\" id=\"fnref" + str(i) + "\"><img src=\"note.png\"/></a></sup>"
         content = content.replace(pattern, text)
         i = i + 1
-    content = content.replace("<ol>", "<ol class=\"duokan-footnote-content\">")
-    content = content.replace("<hr />", "")
+        
+    if isMOBI:
+        content = content.replace("<ol>", "")
+    else:
+        content = content.replace("<ol>", "<ol class=\"duokan-footnote-content\">")
+        content = content.replace("<hr />", "")
     i = 1
     while True:
-        pattern = "<li id=\"fn" + str(i) + "\">"
+        if isMOBI:
+            pattern = "<li id=\"fn" + str(i) + "\"><p>"
+        else:
+            pattern = "<li id=\"fn" + str(i) + "\">"
         result = re.compile(pattern).search(content)
         if result == None:
             break
-        text = "<li class=\"duokan-footnote-item\" id=\"fn" + str(i) + "\">"
+        if isMOBI:
+            text = "<p><span><a id=\"fn" + str(i) + "\" href=\"#fnref" + str(i) + "\"><span>[" + str(i) + "]</span></a>"
+        else:
+            text = "<li class=\"duokan-footnote-item\" id=\"fn" + str(i) + "\">"
         content = content.replace(pattern, text)
         i = i + 1
+    
     i = 1
     while True:
-        pattern2 = "<a href=\"#fnref" + str(i) + "\">↩</a>"
+        if isMOBI:
+            pattern2 = "<a href=\"#fnref" + str(i) + "\">↩</a></p></li>"
+        else:
+            pattern2 = "<a href=\"#fnref" + str(i) + "\">↩</a>"
         result = re.compile(pattern2).search(content)
         if result == None:
             break
-        content = content.replace(pattern2, "")
+        if isMOBI:
+            content = content.replace(pattern2, "</span></p>")
+        else:
+            content = content.replace(pattern2, "")
         i = i + 1
 
     fout = open(filename, "w")
@@ -124,18 +144,19 @@ def replaceit(no):
 
 if __name__ == "__main__":
     chapters = 122
+    isMOBI = False;
     
-    # convert the source file to test.md
+    print("Converting the source file to Markdown format...\n")
     save = open("test.md", "w")
     for i in range(1, chapters + 1):
         convert(i, save)
     save.close()
 
-    # generate raw epub file
+    print("Generating raw epub file using pandoc...\n")
     subprocess.call(["pandoc", "title.txt", "test.md", "-o", "shiji.epub"])
     os.remove("test.md")
 
-    # extract epub file
+    print("Extracting the epub file...\n")
     if not os.path.exists("/tmp/build/"):
         os.mkdir("/tmp/build")
     else:
@@ -145,7 +166,7 @@ if __name__ == "__main__":
         shiji.extractall("/tmp/build")
     os.remove("shiji.epub")
 
-    # copy the data file to modify the epub extraction
+    print("Copying metadata...\n")
     for root, dirs, files in os.walk("data"):
         for file in files:
             src = root + "/" + file
@@ -153,13 +174,15 @@ if __name__ == "__main__":
             if os.path.exists(dest):
                 os.remove(dest)
             shutil.copyfile(src, dest)
-
-    # duokan pop annotations
+    if isMOBI:
+        os.remove("/tmp/build/note.png")
+                
+    print("Generating pop annotations...\n")
     for i in range(1, chapters + 1):
-        replaceit(i)    
+        replaceit(i, isMOBI)    
 
-    # compress the files as shiji.epub
-    with zipfile.ZipFile("shiji.epub", "w") as shiji:
+    print("Compressing and publish shiji.epub...\n")
+    with zipfile.ZipFile("shiji.epub", "w", zipfile.ZIP_DEFLATED) as shiji:
         for root, dirs, files in os.walk("/tmp/build"):
             for file in files:
                 filename = root + "/" + file
