@@ -5,13 +5,12 @@
 
 ## 制作方法
 ```
-chmod +x generate.sh
-./generate.sh
+python3 generate.py
 ```
 按以上步骤可以在当前目录下生成目标文件`shiji.epub`。
 
 ## 需要用到的工具
-python3, pandoc, zip, unzip
+python3, pandoc
 
 ## 版权申明
 所有文本搜集自网络。
