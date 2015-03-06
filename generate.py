@@ -4,6 +4,7 @@ import subprocess
 import shutil
 import os, os.path
 import zipfile
+import sys
 
 def getLine(data):
     content = ""
@@ -141,22 +142,44 @@ def replaceit(no, isMOBI):
     fout.write(content)
     fout.close()
 
+def usage():
+    print("Usage:")
+    print("no argument\tGenerate epub file for Duokan")
+    print("-t kindle\tGenerate epub file for Kindle")
+    print("-t duokan\tGenerate epub file for Duokan")
+    sys.exit()
 
 if __name__ == "__main__":
-    chapters = 122
-    isMOBI = False;
+    if len(sys.argv) == 1:
+        pass
+    if len(sys.argv) == 3 and sys.argv[1] == "-t":
+        if sys.argv[2] == "kindle":
+            isMOBI = True
+        elif sys.argv[2] == "duokan":
+            isMOBI = False
+        else:
+            usage()
+    else:
+        usage()
     
-    print("Converting the source file to Markdown format...\n")
+    chapters = 122
+    
+    if isMOBI:
+        print("I will generate shiji.epub for Kindle")
+    else:
+        print("I will generate shiji.epub for Duokan")
+    
+    print("Converting the source file to Markdown format...")
     save = open("test.md", "w")
     for i in range(1, chapters + 1):
         convert(i, save)
     save.close()
 
-    print("Generating raw epub file using pandoc...\n")
+    print("Generating raw epub file using pandoc...")
     subprocess.call(["pandoc", "title.txt", "test.md", "-o", "shiji.epub"])
     os.remove("test.md")
 
-    print("Extracting the epub file...\n")
+    print("Extracting the epub file...")
     if not os.path.exists("/tmp/build/"):
         os.mkdir("/tmp/build")
     else:
@@ -166,7 +189,7 @@ if __name__ == "__main__":
         shiji.extractall("/tmp/build")
     os.remove("shiji.epub")
 
-    print("Copying metadata...\n")
+    print("Copying metadata...")
     for root, dirs, files in os.walk("data"):
         for file in files:
             src = root + "/" + file
@@ -177,11 +200,11 @@ if __name__ == "__main__":
     if isMOBI:
         os.remove("/tmp/build/note.png")
                 
-    print("Generating pop annotations...\n")
+    print("Generating pop annotations...")
     for i in range(1, chapters + 1):
         replaceit(i, isMOBI)    
 
-    print("Compressing and publish shiji.epub...\n")
+    print("Compressing and publish shiji.epub...")
     with zipfile.ZipFile("shiji.epub", "w", zipfile.ZIP_DEFLATED) as shiji:
         for root, dirs, files in os.walk("/tmp/build"):
             for file in files:
