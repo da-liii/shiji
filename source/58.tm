@@ -3,7 +3,7 @@
 <style|<tuple|article|chinese>>
 
 <\body>
-  \<#4E03\>\<#5341\>\<#5217\>\<#4F20\>\<centerdot\>\<#5546\>\<#541B\>\<#5217\>\<#4F20\>\<#7B2C\>\<#516B\>
+  <doc-data|<doc-title|\<#4E03\>\<#5341\>\<#5217\>\<#4F20\>\<centerdot\>\<#5546\>\<#541B\>\<#5217\>\<#4F20\>\<#7B2C\>\<#516B\>>>
 
   \;
 
@@ -219,9 +219,9 @@
 
 <\references>
   <\collection>
-    <associate|footnote-1|<tuple|1|?>>
-    <associate|footnote-2|<tuple|2|?>>
-    <associate|footnr-1|<tuple|1|?>>
-    <associate|footnr-2|<tuple|2|?>>
+    <associate|footnote-1|<tuple|1|4>>
+    <associate|footnote-2|<tuple|2|4>>
+    <associate|footnr-1|<tuple|1|4>>
+    <associate|footnr-2|<tuple|2|4>>
   </collection>
 </references>
