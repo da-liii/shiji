@@ -291,8 +291,8 @@
     \<#610F\>\<#FF1A\>\<#6000\>\<#7591\>\<#3002\>
   </footnote>\<#FF0C\>\<#66F0\>\<#FF1A\>\<#300C\>\<#4EEA\>\<#8D2B\>\<#65E0\>\<#884C\>\<#FF0C\>\<#5FC5\>\<#6B64\>\<#76D7\>\<#76F8\>\<#541B\>\<#4E4B\>\<#74A7\>\<#3002\>\<#300D\>\<#5171\>\<#6267\>\<#5F20\>\<#4EEA\>\<#FF0C\>\<#63A0\>\<#7B1E\>\<#6570\>\<#767E\><\footnote>
     \<#63A0\>\<#7B1E\>\<#FF1A\>\<#7528\>\<#7AF9\>\<#677F\>\<#6216\>\<#8346\>\<#6761\>\<#62F7\>\<#6253\>\<#3002\>
-  </footnote>\<#FF0C\>\<#4E0D\>\<#670D\>\<#FF0C\>\<#E1D7\>\<#4E4B\><\footnote>
-    \<#E1D7\>\<#FF1A\>\<#901A\>\<#300C\>\<#91CA\>\<#300D\>\<#3002\>\<#91CA\>\<#653E\>\<#3002\>
+  </footnote>\<#FF0C\>\<#4E0D\>\<#670D\>\<#FF0C\>\<#91B3\>\<#4E4B\><\footnote>
+    \<#91B3\>\<#FF1A\>\<#901A\>\<#300C\>\<#91CA\>\<#300D\>\<#3002\>\<#91CA\>\<#653E\>\<#3002\>
   </footnote>\<#3002\>\<#5176\>\<#59BB\>\<#66F0\>\<#FF1A\>\<#300C\>\<#563B\>\<#FF01\>\<#5B50\>\<#6BCB\>\<#8BFB\>\<#4E66\>\<#6E38\>\<#8BF4\>\<#FF0C\>\<#5B89\>\<#5F97\>\<#6B64\>\<#8FB1\>\<#4E4E\>\<#FF1F\>\<#300D\>\<#5F20\>\<#4EEA\>\<#8C13\>\<#5176\>\<#59BB\>\<#66F0\>\<#FF1A\>\<#300C\>\<#89C6\>\<#543E\>\<#820C\>\<#5C1A\>\<#5728\>\<#4E0D\>\<#FF1F\>\<#300D\>\<#5176\>\<#59BB\>\<#7B11\>\<#66F0\>\<#FF1A\>\<#300C\>\<#820C\>\<#5728\>\<#4E5F\>\<#3002\>\<#300D\>\<#4EEA\>\<#66F0\>\<#FF1A\>\<#300C\>\<#8DB3\>\<#77E3\>\<#3002\>\<#300D\>
 
   \;
@@ -743,7 +743,7 @@
     <associate|footnote-11|<tuple|11|10>>
     <associate|footnote-12|<tuple|12|10>>
     <associate|footnote-13|<tuple|13|10>>
-    <associate|footnote-14|<tuple|14|11>>
+    <associate|footnote-14|<tuple|14|10>>
     <associate|footnote-15|<tuple|15|11>>
     <associate|footnote-16|<tuple|16|11>>
     <associate|footnote-17|<tuple|17|11>>
@@ -753,7 +753,7 @@
     <associate|footnote-20|<tuple|20|11>>
     <associate|footnote-21|<tuple|21|11>>
     <associate|footnote-22|<tuple|22|11>>
-    <associate|footnote-23|<tuple|23|12>>
+    <associate|footnote-23|<tuple|23|11>>
     <associate|footnote-24|<tuple|24|12>>
     <associate|footnote-25|<tuple|25|12>>
     <associate|footnote-26|<tuple|26|12>>
@@ -766,7 +766,7 @@
     <associate|footnote-32|<tuple|32|12>>
     <associate|footnote-33|<tuple|33|12>>
     <associate|footnote-34|<tuple|34|12>>
-    <associate|footnote-35|<tuple|35|13>>
+    <associate|footnote-35|<tuple|35|12>>
     <associate|footnote-36|<tuple|36|13>>
     <associate|footnote-37|<tuple|37|13>>
     <associate|footnote-38|<tuple|38|13>>
@@ -783,11 +783,11 @@
     <associate|footnote-48|<tuple|48|13>>
     <associate|footnote-49|<tuple|49|13>>
     <associate|footnote-5|<tuple|5|10>>
-    <associate|footnote-50|<tuple|50|14>>
+    <associate|footnote-50|<tuple|50|13>>
     <associate|footnote-51|<tuple|51|14>>
     <associate|footnote-52|<tuple|52|14>>
-    <associate|footnote-53|<tuple|53|17>>
-    <associate|footnote-54|<tuple|54|18>>
+    <associate|footnote-53|<tuple|53|14>>
+    <associate|footnote-54|<tuple|54|17>>
     <associate|footnote-55|<tuple|55|18>>
     <associate|footnote-56|<tuple|56|18>>
     <associate|footnote-57|<tuple|57|18>>
@@ -796,7 +796,7 @@
     <associate|footnote-6|<tuple|6|10>>
     <associate|footnote-60|<tuple|60|18>>
     <associate|footnote-61|<tuple|61|18>>
-    <associate|footnote-62|<tuple|62|?>>
+    <associate|footnote-62|<tuple|62|18>>
     <associate|footnote-7|<tuple|7|10>>
     <associate|footnote-8|<tuple|8|10>>
     <associate|footnote-9|<tuple|9|10>>
@@ -805,7 +805,7 @@
     <associate|footnr-11|<tuple|11|10>>
     <associate|footnr-12|<tuple|12|10>>
     <associate|footnr-13|<tuple|13|10>>
-    <associate|footnr-14|<tuple|14|11>>
+    <associate|footnr-14|<tuple|14|10>>
     <associate|footnr-15|<tuple|15|11>>
     <associate|footnr-16|<tuple|16|11>>
     <associate|footnr-17|<tuple|17|11>>
@@ -815,7 +815,7 @@
     <associate|footnr-20|<tuple|20|11>>
     <associate|footnr-21|<tuple|21|11>>
     <associate|footnr-22|<tuple|22|11>>
-    <associate|footnr-23|<tuple|23|12>>
+    <associate|footnr-23|<tuple|23|11>>
     <associate|footnr-24|<tuple|24|12>>
     <associate|footnr-25|<tuple|25|12>>
     <associate|footnr-26|<tuple|26|12>>
@@ -828,7 +828,7 @@
     <associate|footnr-32|<tuple|32|12>>
     <associate|footnr-33|<tuple|33|12>>
     <associate|footnr-34|<tuple|34|12>>
-    <associate|footnr-35|<tuple|35|13>>
+    <associate|footnr-35|<tuple|35|12>>
     <associate|footnr-36|<tuple|36|13>>
     <associate|footnr-37|<tuple|37|13>>
     <associate|footnr-38|<tuple|38|13>>
@@ -846,10 +846,10 @@
     <associate|footnr-49|<tuple|49|13>>
     <associate|footnr-5|<tuple|5|10>>
     <associate|footnr-50|<tuple|50|13>>
-    <associate|footnr-51|<tuple|51|14>>
+    <associate|footnr-51|<tuple|51|13>>
     <associate|footnr-52|<tuple|52|14>>
-    <associate|footnr-53|<tuple|53|17>>
-    <associate|footnr-54|<tuple|54|18>>
+    <associate|footnr-53|<tuple|53|14>>
+    <associate|footnr-54|<tuple|54|17>>
     <associate|footnr-55|<tuple|55|18>>
     <associate|footnr-56|<tuple|56|18>>
     <associate|footnr-57|<tuple|57|18>>
@@ -858,7 +858,7 @@
     <associate|footnr-6|<tuple|6|10>>
     <associate|footnr-60|<tuple|60|18>>
     <associate|footnr-61|<tuple|61|18>>
-    <associate|footnr-62|<tuple|62|?>>
+    <associate|footnr-62|<tuple|62|18>>
     <associate|footnr-7|<tuple|7|10>>
     <associate|footnr-8|<tuple|8|10>>
     <associate|footnr-9|<tuple|9|10>>
